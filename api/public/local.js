@@ -1,5 +1,5 @@
 const rpc = function( o, okay ) {
-	fetch("/", {
+	fetch("/api/", {
 		method:"POST",
 		headers: {
 			"Content-Type": "application/json"
