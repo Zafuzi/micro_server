@@ -1,4 +1,4 @@
-const 	express 	= require("express"),
+const	express 	= require("express"),
 		cors		= require("cors"),
 		path		= require("path");
 
@@ -42,7 +42,6 @@ const rpc = function( req, res, next ) {
 
 // APP
 const app 	= express();
-const port	= 3000;
 
 app.use(express.json());
 app.use(express.static("frontend"))
