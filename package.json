@@ -8,6 +8,6 @@
     "express": "^4.17.1"
   },
   "scripts": {
-    "start": "nodemon api/index.js 1"
+    "start": "node ../nodes dev . $1"
   }
 }
