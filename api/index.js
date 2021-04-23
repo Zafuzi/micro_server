@@ -1,6 +1,7 @@
 const 	DEV			= process.argv.slice(2)[0] ? true : false;
 
 const 	express 	= require("express"),
+		cors		= require("cors"),
 		path		= require("path");
 
 // RPC Controller
@@ -46,10 +47,12 @@ const app 	= express();
 const port	= 3000;
 
 app.use(express.json());
+app.use(express.static("public"))
+app.use(cors());
 
 app.get( "/", (req, res) => {
 	res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate')
-	res.sendFile( path.join( __dirname + "/frontend/index.html" ) );
+	res.sendFile( path.join( __dirname + "/public/index.html" ) );
 	res.end();
 });
 

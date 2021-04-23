@@ -10,6 +10,6 @@
     "microservice": "^0.1.0"
   },
   "scripts": {
-    "start": "node api/index.js"
+    "start": "nodemon api/index.js 1"
   }
 }
