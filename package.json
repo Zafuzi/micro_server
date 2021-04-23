@@ -9,5 +9,8 @@
   },
   "scripts": {
     "start": "node ../nodes dev . $1"
+  },
+  "devDependencies": {
+    "vm2": "^3.9.3"
   }
 }

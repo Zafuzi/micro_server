@@ -1,11 +1,12 @@
+delete require.cache[module.filename]; // always reload
+Object.keys(require.cache).forEach(function(key) { delete require.cache[key] })
+
 const	express 	= require("express"),
 		cors		= require("cors"),
 		path		= require("path");
 
 // RPC Controller
 const rpc = function( req, res, next ) {
-	const Micro = require("./micro.js");
-
 	res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate')
 	res.setHeader("content-type", "application/json");
 
@@ -29,11 +30,14 @@ const rpc = function( req, res, next ) {
 	let cmd 	= body.cmd;
 
 	if( cmd ) {
+		const Micro = require("./micro.js");
 		let m = new Micro( body, okay, fail );
+
 		if( ! m[cmd] ) {
 			fail( `Command does not exist: ${cmd}` );
 			return;
 		}
+
 		m[cmd]();
 	} else {
 		fail( "No command given" );
