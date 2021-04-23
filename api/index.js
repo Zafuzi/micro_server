@@ -1,3 +1,5 @@
+const 	DEV			= process.argv.slice(2)[0] ? true : false;
+
 const 	express 	= require("express"),
 		cors		= require("cors"),
 		path		= require("path");
@@ -54,9 +56,10 @@ app.get( "/", (req, res) => {
 
 app.post( "*", rpc );
 
-app.listen( port, function() {
-	console.log(`Listening on port ${port}`);
-});
-
+if( DEV ) {
+	app.listen( port, function() {
+		console.log(`Listening on port ${port}`);
+	});
+}
 
 module.exports = app;
