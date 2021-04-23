@@ -47,12 +47,12 @@ const app 	= express();
 const port	= 3000;
 
 app.use(express.json());
-app.use(express.static("public"))
+app.use(express.static("frontend"))
 app.use(cors());
 
 app.get( "/", (req, res) => {
 	res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate')
-	res.sendFile( path.join( __dirname + "/public/index.html" ) );
+	res.sendFile( path.join( __dirname + "/frontend/index.html" ) );
 	res.end();
 });
 
