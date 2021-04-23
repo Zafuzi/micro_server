@@ -1,13 +1,13 @@
 const 	DEV			= process.argv.slice(2)[0] ? true : false;
 
 const 	express 	= require("express"),
-		cors		= require("cors"),
 		path		= require("path");
 
 // RPC Controller
 const rpc = function( req, res, next ) {
 	const Micro = require("./micro.js");
 
+	res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate')
 	res.setHeader("content-type", "application/json");
 
 	let okay = function( msg ) { 
@@ -46,10 +46,9 @@ const app 	= express();
 const port	= 3000;
 
 app.use(express.json());
-app.use(cors());
-app.use(express.static('frontend'))
 
 app.get( "/", (req, res) => {
+	res.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate')
 	res.sendFile( path.join( __dirname + "/frontend/index.html" ) );
 	res.end();
 });
