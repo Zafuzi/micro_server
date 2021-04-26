@@ -5,12 +5,15 @@
   "license": "MIT",
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "compression": "^1.7.4",
+    "connect": "^3.7.0",
+    "cookie-parser": "^1.4.5",
+    "log5": "^2.4.0",
+    "serve-static": "^1.14.1",
+    "sleepless": "^3.9.0"
   },
   "scripts": {
     "start": "node ../nodes dev . $1"
-  },
-  "devDependencies": {
-    "vm2": "^3.9.3"
   }
 }

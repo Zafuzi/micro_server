@@ -1,11 +1,25 @@
+const L = require("log5").mkLog("\tapi: ")(5);
 module.exports = class Micro {
 	constructor( data, okay, fail ) {
 		this.data 	= data;
 		this.okay 	= okay;
 		this.fail 	= fail;
+		try {
+			this.config = j2o( require("fs").readFileSync( __dirname+"/config.json", { encoding: "utf8" }) );
+		} catch( config_err ) {
+			L.E( "failed to load config", config_err );
+			this.fail( "failed to load config" );
+			return;
+		} finally {
+			if( ! this.config ) {
+				L.E( "failed to load config" );
+				this.fail( "failed to load config" );
+				return;
+			}
+		}
 	}
 	log() {
-		console.log( this.data?.msg || "no message" );
+		L.D( this.data?.msg || "no message" );
 		this.okay();
 	}
 	ping() {
@@ -21,7 +35,7 @@ module.exports = class Micro {
 
 		  // The whole response has been received. Print out the result.
 		  resp.on('end', () => {
-		    self.okay(JSON.parse(data).explanation);
+		    self.okay(data.explanation);
 		  });
 
 		}).on("error", (err) => {
