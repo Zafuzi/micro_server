@@ -4,17 +4,14 @@ module.exports = class Micro {
 		this.data 	= data;
 		this.okay 	= okay;
 		this.fail 	= fail;
+		// setup a database connection
 		try {
 			this.config = j2o( require("fs").readFileSync( __dirname+"/config.json", { encoding: "utf8" }) );
 		} catch( config_err ) {
 			L.E( "failed to load config", config_err );
-			this.fail( "failed to load config" );
-			return;
 		} finally {
 			if( ! this.config ) {
 				L.E( "failed to load config" );
-				this.fail( "failed to load config" );
-				return;
 			}
 		}
 	}
