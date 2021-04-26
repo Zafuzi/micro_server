@@ -1,4 +1,7 @@
+delete require.cache[module.filename]; // always reload
+const HERE = require("path").dirname( module.filename );
 const L = require("log5").mkLog("\tapi: ")(5);
+
 module.exports = class Micro {
 	constructor( data, okay, fail ) {
 		this.data 	= data;
