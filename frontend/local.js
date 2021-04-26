@@ -4,9 +4,12 @@ document.addEventListener("DOMContentLoaded", dcl => {
 })
 
 function init() {
-	rpc({cmd: "ping"}, console.log, console.error);
+	rpc({cmd: "ping"}, r => {
+		showAlert("okay", r.data );
+	}, err => {
+		showAlert("fail", err );
+	});
 
 	let o = {cmd: "log", msg: "Hello World!" }
 	rpc( o, console.log, console.error );
-	showAlert( "info", o.msg );
 }
