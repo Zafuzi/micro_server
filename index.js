@@ -10,7 +10,6 @@ const	connect			= require("connect"),
 const app = connect();
 
 app.use( require( "body-parser" ).json() );
-app.use( require( "cookie-parser" )() );
 app.use( require( "compression" )() );
 //app.use( require( "cors" )() );	// enable to handle requests from other domains
 app.use( mw_fin_json );		// adds okay, fail to res (defined in sleepless module)
