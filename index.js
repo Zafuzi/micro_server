@@ -68,8 +68,8 @@ app.use( ( req, res, next ) => {
 	next();
 });
 
-// Serve statics files
-app.use( serve_static( HERE + "/frontend" ) );
+// Serve static files
+app.use( serve_static( HERE + "/static" ) );
 
 module.exports = app;
 
