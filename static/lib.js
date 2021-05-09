@@ -1,48 +1,4 @@
-rpc = function( o, okay = ()=>{}, fail = ()=>{} ) {
-	fetch("/api/", {
-		method:"POST",
-		headers: {
-			"Content-Type": "application/json"
-		}, 
-		body: o2j(o)
-	})
-	.then(res => {
-		return res.json();
-	})
-	.then(obj => {
-        if( ! obj ) {
-			fail( "Invalid JSON response: " + json );
-			return;
-		}
-		if( obj.error ) {
-			fail( obj.error );
-			return;
-		}
-		okay( obj );
-	})
-}
-
-!function(){
-    var lastBtn = null
-    document.addEventListener('click',function(e){
-        if (!e.target.closest) return;
-        lastBtn = e.target.closest('button, input[type=submit]');
-    }, true);
-    document.addEventListener('submit',function(e){
-        if ('submitter' in e) return;
-        var canditates = [document.activeElement, lastBtn];
-        lastBtn = null;
-        for (var i=0; i < canditates.length; i++) {
-            var candidate = canditates[i];
-            if (!candidate) continue;
-            if (!candidate.form) continue;
-            if (!candidate.matches('button, input[type=button], input[type=image]')) continue;
-            e.submitter = candidate;
-            return;
-        }
-        e.submitter = e.target.querySelector('button, input[type=button], input[type=image]')
-    }, true);
-}();
+const API = "/api/";
 
 let isAlertVisible = false;
 let alertsToShow = [];
@@ -88,3 +44,4 @@ function runNextAlert() {
     showAlert( nextAlert.type, nextAlert.message, nextAlert.timeout );
     alertsToShow.splice(0, 1);
 }
+

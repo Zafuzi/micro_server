@@ -23,6 +23,16 @@ const q = function(cb) {
 	});
 }
 
+const s = function(cb) {
+	sleepless_users.connect( "mysql", CONFIG, function(db) {
+		if( ! db ) { L.E("failed to connect to server"); return; }
+		cb(db);
+	}, function(err) {
+		L.E( err );
+		return;
+	});
+}
+
 const query = function( method, sql, args, okay, fail ) {
 	q( db => {
 		db[method]( sql, args, records => {
@@ -44,8 +54,23 @@ module.exports = function( input, okay, fail ) {
 	const { cmd, msg } = input;
 
 	if( cmd == "ping" ) {
-		query("get_recs", "SELECT * FROM users;", okay, fail);
+		okay( "pong" );
 		return;
+	}
+
+	if( cmd == "register" ) {
+		let user_id = input.username;
+		s( function(su) {
+			su.user.register( input, okay, fail );
+		});
+	}
+
+	if( cmd == "login" ) {
+		let user_id = input.username;
+		let password = input.password;
+		s( function(su) {
+			su.user.authenticate( input, okay, fail );
+		});
 	}
 
 	if( cmd == "log" ) {
