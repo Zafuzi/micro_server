@@ -2,10 +2,13 @@
 delete require.cache[module.filename]; // always reload
 const HERE = require("path").dirname( module.filename );
 
-require( "sleepless" ).globalize();
+require( "sleepless" );
 const	connect			= require("connect"),
 		serve_static 	= require( "serve-static" ),
 		L = log5.mkLog( "\tmicro_server: " )(5);
+
+const dotenv = require('dotenv');
+dotenv.config();
 
 const app = connect();
 
