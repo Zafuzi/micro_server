@@ -11,7 +11,12 @@
 		<header>
 			<nav>
 				<h1><a href="/?page=home">Micro Server</a></h1>
-				<a href="/?page=login">Login</a>
+				<r8 name="loginButton">
+					<a href="/?page=login">Login</a>
+				</r8>
+				<r8 name="logoutButton">
+					<a href="/?page=logout">Logout</a>
+				</r8>
 			</nav>
 		</header>
 		<main>
@@ -35,6 +40,7 @@
 				<r8 name="register">
 					<form id="register_form">
 						<h2>Register</h2>
+						<span class="fail">__error__</span>
 						<input type="text" name="username" placeholder="username or email" required autocomplete/>
 						<input type="password" name="password" placeholder="password" required autocomplete/>
 						<button>Register</button>
@@ -47,6 +53,9 @@
 			</section>
 
 			<div class="page" id="page_home">
+				<r8 name="sid">
+					SID: __sid__
+				</r8>
 				<p class="snackbar snackbar-okay">Connected</p>
 				<p class="snackbar snackbar-info">Edit api/index.js to add api calls.</p>
 				<p class="snackbar snackbar-info">Edit static/* to edit your public facing app.</p>

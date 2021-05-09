@@ -59,18 +59,21 @@ module.exports = function( input, okay, fail ) {
 	}
 
 	if( cmd == "register" ) {
-		let user_id = input.username;
+		let user_id = msg.username;
+		msg.data = { user_id };
 		s( function(su) {
-			su.user.register( input, okay, fail );
+			su.user.register( msg, okay, fail );
 		});
+		return;
 	}
 
 	if( cmd == "login" ) {
 		let user_id = input.username;
 		let password = input.password;
 		s( function(su) {
-			su.user.authenticate( input, okay, fail );
+			su.user.authenticate( msg, okay, fail );
 		});
+		return;
 	}
 
 	if( cmd == "log" ) {
