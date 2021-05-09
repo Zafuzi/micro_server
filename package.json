@@ -13,6 +13,7 @@
     "sleepless": "^3.12.1"
   },
   "scripts": {
-    "start": "node ../nodes dev . $1"
+    "start": "node ../nodes dev . $1",
+    "production": "node server.js $1"
   }
 }
