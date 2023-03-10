@@ -7,26 +7,33 @@
 		<link href="local.css" rel="stylesheet">
 	</head>
 	<body>
-
 		<header>
 			<nav>
-				<h1><a href="/?page=home">Micro Server</a></h1>
-				<r8 name="loginButton">
-					<a href="/?page=login">Login</a>
-				</r8>
-				<r8 name="logoutButton">
-					<a href="/?page=logout">Logout</a>
-				</r8>
+				<h1><a href="/">Micro Server</a></h1>
+                <ul class="nav-list">
+                    <li><a href="/?page=home">Home</a></li>
+                    <li><a href="/?page=about">About</a></li>
+                    <r8 name="loginButton">
+                        <li><a href="/?page=login">Login</a></li>
+                    </r8>
+                    <r8 name="logoutButton">
+                        <li><a href="/?page=logout">Logout</a></li>
+                    </r8>
+                </ul>
 			</nav>
 		</header>
-		<main>
+		<main style="opacity: 0;">
 			<section class="page" id="page_login">
 				<r8 name="login">
 					<form id="login_form">
 						<h2>Login</h2>
 						<span class="fail">__error__</span>
-						<input type="text" name="username" placeholder="username or email" required autocomplete/>
-						<input type="password" name="password" placeholder="password" required autocomplete/>
+						<label>
+                            <input type="text" name="username" placeholder="username or email" required autocomplete/>
+                        </label>
+						<label>
+                            <input type="password" name="password" placeholder="password" required autocomplete/>
+                        </label>
 						<button>Login</button>
 						<p>
 							Need an account?
@@ -41,8 +48,12 @@
 					<form id="register_form">
 						<h2>Register</h2>
 						<span class="fail">__error__</span>
-						<input type="text" name="username" placeholder="username or email" required autocomplete/>
-						<input type="password" name="password" placeholder="password" required autocomplete/>
+						<label>
+                            <input type="text" name="username" placeholder="username or email" required autocomplete/>
+                        </label>
+                        <label>
+                            <input type="password" name="password" placeholder="password" required autocomplete/>
+                        </label>
 						<button>Register</button>
 						<p>
 							Already have an account?
@@ -59,6 +70,13 @@
 				<p class="snackbar snackbar-okay">Connected</p>
 				<p class="snackbar snackbar-info">Edit api/index.js to add api calls.</p>
 				<p class="snackbar snackbar-info">Edit static/* to edit your public facing app.</p>
+			</div>
+            
+			<div class="page" id="page_about">
+                <p class="snackbar snackbar-info">
+                    Welcome to micro_server!
+                    It's really simple to use and not a reinvention of other frameworks...
+                </p>
 			</div>
 		</main>
 

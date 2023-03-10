@@ -2,6 +2,13 @@ const API = "/api/";
 
 let isAlertVisible = false;
 let alertsToShow = [];
+
+/**
+ * Shows an alert on the page with a default of 3 second timeout
+ * @param type - okay, info, warn, fail
+ * @param message - some text to show
+ * @param timeout - optional timeout in ms (default 3000)
+ */
 function showAlert( type, message, timeout ) {
     // only show one at a time for now
     // TODO increase to 3 and make them push down dynamically
@@ -39,7 +46,7 @@ function showAlert( type, message, timeout ) {
 }
 
 function runNextAlert() {
-    if( alertsToShow.length == 0 ) return;
+    if( alertsToShow.length === 0 ) return;
     let nextAlert = alertsToShow[0];
     showAlert( nextAlert.type, nextAlert.message, nextAlert.timeout );
     alertsToShow.splice(0, 1);
