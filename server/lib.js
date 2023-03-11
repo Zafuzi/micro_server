@@ -1,4 +1,3 @@
-const HERE = require("path").dirname(module.filename);
 const L = require("log5").mkLog("\tmicro lib: ")(5);
 
 const DB_CONFIG = {
@@ -18,7 +17,6 @@ const q = function(cb)
     }, err =>
     {
         L.E(err);
-        return;
     });
 };
 

@@ -1,6 +1,4 @@
-const HERE = require("path").dirname(module.filename);
-
-const {DB_CONFIG} = require("./lib");
+// const {DB_CONFIG} = require("./lib");
 const L = require("log5").mkLog("\tmicro Auth: ")(4);
 
 const Auth = function()
@@ -47,8 +45,6 @@ module.exports = {
         },
         login(msg, okay, fail)
         {
-            let user_id = msg.username;
-            let password = msg.password;
             Auth()?.user.authenticate(msg, okay, fail);
         }
     }

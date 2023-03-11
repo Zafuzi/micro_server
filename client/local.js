@@ -9,7 +9,6 @@ let templates = {
 let SID;
 
 const main = document.querySelector("main");
-const loading = document.querySelector("loading");
 const PAGE_LOAD_DELAY = 50;
 
 /**
