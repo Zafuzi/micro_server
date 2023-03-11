@@ -1,9 +1,9 @@
 _______________________________________________________________________________
 
   
-                                MICRO SERVER
+                                  MICRO
 
-                            node, connect, cors
+                       node, connect, cors, sleepless
 
 _______________________________________________________________________________
 
@@ -12,17 +12,17 @@ _______________________________________________________________________________
 
 - about -
 
-Micro Server is a simple template for starting a new project that requires an api and a simple frontend
+Micro is a simple template for starting a new project that requires an api and a simple frontend
 
-Add code to "api/index.js" to handle api calls however you like.
+Add code to "server/index.js" to handle api calls however you like.
 
-Static website files go in "static/"
-See "static/local.js" to see how to call the api with a simple POST
+Static website files go in "client/"
+See "client/local.js" to see how to call the api with a simple POST
 
 - structure -
 
 	index.js : router
-	api/index.js : api
-	static/ :
+	server/index.js : api
+	client/ :
 		index.html
 		local.js

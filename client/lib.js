@@ -1,4 +1,4 @@
-const API = "/api/";
+const API = "/server/";
 
 let isAlertVisible = false;
 let alertsToShow = [];

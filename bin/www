@@ -1,18 +1,18 @@
 #!/usr/bin/env node
 
-var app = require('../index');
-var http = require('http');
+const app = require('../index');
+const http = require('http');
 
-var port = normalizePort( process.env.PORT || '3000' );
+const port = normalizePort( process.env.PORT || '3000' );
 
-var server = http.createServer(app);
+const server = http.createServer(app);
 
 server.listen(port);
 server.on('error', fail);
 server.on('listening', okay);
 
 function normalizePort(val) {
-	var port = parseInt(val, 10);
+	const port = parseInt(val, 10);
 
 	if (isNaN(port)) {
 		// named pipe
@@ -33,7 +33,7 @@ function fail(error) {
 		throw error;
 	}
 
-	var bind = typeof port === 'string'
+	const bind = typeof port === 'string'
 		? 'Pipe ' + port
 		: 'Port ' + port;
 
@@ -57,8 +57,8 @@ function fail(error) {
 */
 
 function okay() {
-	var addr = server.address();
-	var bind = typeof addr === 'string'
+	const addr = server.address();
+	const bind = typeof addr === 'string'
 		? 'pipe ' + addr
 		: 'port ' + addr.port;
 
@@ -69,4 +69,4 @@ function okay() {
 	console.log('Server listening on ' + bind + ' 🚀');
 }
 
-const startupMessage = "zafuzi's incredible micro server";
+const startupMessage = "zafuzi's incredible micro...";
