@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5983588b-c7ea-4900-995a-e586682cb53f" name="Changes" comment="* code cleanup" />
+    <list default="true" id="5983588b-c7ea-4900-995a-e586682cb53f" name="Changes" comment="* added idea git">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -74,6 +77,7 @@
       <workItem from="1678768463601" duration="25027000" />
       <workItem from="1678825883155" duration="6470000" />
       <workItem from="1679677443878" duration="472000" />
+      <workItem from="1679677919888" duration="40000" />
     </task>
     <task id="LOCAL-00001" summary="* rewrite of server to use destructured methods from modules">
       <created>1678502861996</created>
@@ -89,7 +93,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678502974683</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="* added idea git">
+      <created>1679677928598</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1679677928598</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -98,7 +109,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="* rewrite of server to use destructured methods from modules" />
     <MESSAGE value="* code cleanup" />
-    <option name="LAST_COMMIT_MESSAGE" value="* code cleanup" />
+    <MESSAGE value="* added idea git" />
+    <option name="LAST_COMMIT_MESSAGE" value="* added idea git" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -106,7 +118,6 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/index.js</url>
           <line>26</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
