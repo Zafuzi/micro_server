@@ -73,7 +73,7 @@
       <workItem from="1678727389583" duration="599000" />
       <workItem from="1678768463601" duration="25027000" />
       <workItem from="1678825883155" duration="6470000" />
-      <workItem from="1679677443878" duration="398000" />
+      <workItem from="1679677443878" duration="472000" />
     </task>
     <task id="LOCAL-00001" summary="* rewrite of server to use destructured methods from modules">
       <created>1678502861996</created>
@@ -99,5 +99,17 @@
     <MESSAGE value="* rewrite of server to use destructured methods from modules" />
     <MESSAGE value="* code cleanup" />
     <option name="LAST_COMMIT_MESSAGE" value="* code cleanup" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/index.js</url>
+          <line>26</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
